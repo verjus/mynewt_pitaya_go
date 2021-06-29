@@ -1,0 +1,3 @@
+repo.name: mynewt_pitaya_go
+repo.versions:
+    "0.0.0": "master"

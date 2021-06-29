@@ -1,0 +1,107 @@
+GNU gdb (GNU Arm Embedded Toolchain 9-2020-q2-update) 8.3.1.20191211-git
+Copyright (C) 2019 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "--host=x86_64-linux-gnu --target=arm-none-eabi".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+SEGGER J-Link GDB Server V6.80a Command Line Version
+
+JLinkARM.dll V6.80a (DLL compiled May 29 2020 16:30:38)
+
+Command line: -device nRF52 -speed 1000 -if SWD -port 3333 -singlerun
+-----GDB Server start settings-----
+GDBInit file:                  none
+GDB Server Listening port:     3333
+SWO raw output listening port: 2332
+Terminal I/O port:             2333
+Accept remote connection:      yes
+Generate logfile:              off
+Verify download:               off
+Init regs on start:            off
+Silent mode:                   off
+Single run mode:               on
+Target connection timeout:     0 ms
+------J-Link related settings------
+J-Link Host interface:         USB
+J-Link script:                 none
+J-Link settings file:          none
+------Target related settings------
+Target device:                 nRF52
+Target interface:              SWD
+Target interface speed:        1000kHz
+Target endian:                 little
+
+Connecting to J-Link...
+J-Link is connected.
+Firmware: J-Link V9 compiled Dec 13 2019 11:14:50
+Hardware: V9.60
+S/N: 583650105
+Feature(s): GDB, RDI, FlashBP, FlashDL, JFlash, RDDI
+Checking target voltage...
+Target voltage: 3.30 V
+Listening on TCP/IP port 3333
+Connecting to target...
+Connected to target
+Waiting for GDB connection...Connected to 127.0.0.1
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+Reading all registers
+Read 4 bytes @ address 0x000001CA (Data = 0xD0FB2900)
+Read 2 bytes @ address 0x000001CA (Data = 0x2900)
+0x000001ca in ?? ()
+Received monitor command: reset
+Resetting target
+Resetting target
+Downloading 12224 bytes @ address 0x00000000
+Restoring binary file ../../../bin/targets/E104_boot/app/@mcuboot/boot/mynewt/mynewt.elf.bin into memory (0x0 to 0x2fc0)
+Reading register (MSP = 0x20010000)
+Reading register (PSP = 0x       0)
+Reading register (PRIMASK = 0x       0)
+Reading register (BASEPRI = 0x       0)
+Reading register (FAULTMASK = 0x       0)
+Reading register (CONTROL = 0x       0)
+Reading register (FPSCR = 0x       0)
+r0             0x0                 0
+r1             0x0                 0
+r2             0x10003             65539
+r3             0x40000000          1073741824
+r4             0x0                 0
+r5             0x0                 0
+r6             0x0                 0
+r7             0x0                 0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x0                 0
+r12            0x0                 0
+sp             0x2000ffd8          0x2000ffd8
+lr             0x4f7               1271
+pc             0x1ca               0x1ca
+xpsr           0x61000000          1627389952
+msp            0x20010000          536936448
+psp            0x0                 0
+primask        0x0                 0
+basepri        0x0                 0
+faultmask      0x0                 0
+control        0x0                 0
+fpscr          0x0                 0
+Received monitor command: reset
+Resetting target
+Resetting target
+A debugging session is active.
+
+	Inferior 1 [Remote target] will be killed.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+GDB closed TCP/IP connection (Socket 10)
+Restoring target state and closing J-Link connection...
+Shutting down...
