@@ -48,7 +48,7 @@ nm_bus_init(void *pvinit)
     if (!winc1500_spi_inited) {
       printf("initiating...\n");
         if (hal_gpio_init_out(WINC1500_SPI_SSN, 1)) {
-	  printf("error 1\n");
+	  printf("M2M_ERR_BUS_FAIL error on init.\n");
             return M2M_ERR_BUS_FAIL;
         }
         cfg.data_mode = HAL_SPI_MODE0;
@@ -58,12 +58,12 @@ nm_bus_init(void *pvinit)
 
 	int rc = hal_spi_config(BSP_WINC1500_SPI_PORT, &cfg);
         if (rc) {
-	  printf("error %d on port %d\n", rc, BSP_WINC1500_SPI_PORT);
+	  printf("error %d on port %d.\n", rc, BSP_WINC1500_SPI_PORT);
             return M2M_ERR_BUS_FAIL;
         }
         winc1500_spi_inited = 1;
         if (hal_spi_enable(BSP_WINC1500_SPI_PORT)) {
-	  printf("error 3\n");
+	  printf("M2M_ERR_BUS_FAIL error on enable.\n");
             return M2M_ERR_BUS_FAIL;
         }
     }

@@ -2,7 +2,7 @@
  *
  * \file
  *
- * \brief BSD compatible socket interface internal types.
+ * \brief WINC1500 configuration.
  *
  * Copyright (c) 2016-2018 Microchip Technology Inc. and its subsidiaries.
  *
@@ -31,31 +31,33 @@
  * \asf_license_stop
  *
  */
-#ifndef __SOCKET_INTERNAL_H__
-#define __SOCKET_INTERNAL_H__
 
+#ifndef CONF_WINC_H_INCLUDED
+#define CONF_WINC_H_INCLUDED
 
-#ifdef  __cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-INCLUDES
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+/* #include "boards.h" */
+/* #include "nrf_log.h" */
+/* #include "nrf_log_ctrl.h" */
 
-#include "winc1500/socket/socket.h"
-#include "winc1500/socket/m2m_socket_host_if.h"
+/*
+   ---------------------------------
+   --------- Debug Options ---------
+   ---------------------------------
+*/
 
+#define CONF_WINC_DEBUG               (1)
+#define CONF_WINC_PRINTF(...)         \
+   {                                  \
+       NRF_LOG_RAW_INFO(__VA_ARGS__); \
+       NRF_LOG_FLUSH();               \
+   }
 
-/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-FUNCTION PROTOTYPES
-*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
-
-NMI_API void Socket_ReadSocketData(SOCKET sock, tstrSocketRecvMsg *pstrRecv,uint8 u8SocketMsg,
-								uint32 u32StartAddress,uint16 u16ReadCount);
-
-#ifdef  __cplusplus
+#ifdef __cplusplus
 }
-#endif /* __cplusplus */
+#endif
 
-#endif /* __SOCKET_H__ */
+#endif /* CONF_WINC_H_INCLUDED */
